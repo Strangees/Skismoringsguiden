@@ -1,0 +1,21 @@
+.background_header{
+  background: url('https://getmdl.io/assets/demos/transparent.jpg') center / cover;
+  height: 350px;
+}
+.mdl-layout__content{
+  margin: 30px auto;
+}
+
+.buttons_center{
+margin-top: 200px;
+}
+
+.mdl-button{
+  margin: 50px;
+}
+.buttons_center .voks{
+  width: 100px;
+  height:100px;
+  background-color: black;
+  display: inline-block;
+}
