@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebView;
 import android.widget.ProgressBar;
 
 public class MainActivity extends AppCompatActivity {
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         thread.start();
         if (progress==100) {
             StartWebVeiw();
+            finish();
         }
     }
 
@@ -67,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, WebActivity.class);
         startActivity(intent);
     }
+
 
 
     @Override

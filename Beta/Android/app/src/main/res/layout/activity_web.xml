@@ -4,10 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:elevation="0dp"
     tools:context="one.swc.skismringsguiden.WebActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="311dp"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     <WebView
         android:id="@+id/WebView1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        tools:layout_editor_absoluteY="-27dp"></WebView>
+
+    <TextView
+        android:id="@+id/textviewabout"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/about_info"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="25dp" />
+
+    <Button
+        android:id="@+id/buttonviewabout"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="100dp"
+        android:onClick="ExitAbout"
+        android:text="Gå tilbake"
+        android:textSize="24sp"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteY="44dp" />
 </android.support.design.widget.CoordinatorLayout>
