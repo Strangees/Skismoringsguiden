@@ -45,6 +45,7 @@
       </div>
       <main class="mdl-layout__content">
         <div class="buttons_center_card">
+        <?php include '../php/query1.php';?>
 
           <div class="demo-card-square mdl-card mdl-shadow--2dp">
             <div class="mdl-card__title mdl-card--expand">

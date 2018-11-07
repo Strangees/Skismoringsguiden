@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "456760281461",
+    "firebase_url": "https://snosmoringsappen.firebaseio.com",
+    "project_id": "snosmoringsappen",
+    "storage_bucket": "snosmoringsappen.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456760281461:android:4554a1170d3716fb",
+        "android_client_info": {
+          "package_name": "one.swc.skismringsguiden"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456760281461-9csvj7pk1b085bjjiqvc371h5usguk77.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNwdoiYmyRLOEBBosry0L6NFi2MDJkM0M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

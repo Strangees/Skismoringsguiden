@@ -21,6 +21,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 import org.w3c.dom.ProcessingInstruction;
 
 import java.security.PrivateKey;
@@ -30,12 +32,13 @@ public class WebActivity extends AppCompatActivity {
     private Object view;
     private TextView textViewAbout;
     private Button ButtonViewAbout;
-
+    private FirebaseAnalytics mFirebaseAnalytics;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         setContentView(R.layout.activity_web);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         ButtonViewAbout = (Button) findViewById(R.id.buttonviewabout);
