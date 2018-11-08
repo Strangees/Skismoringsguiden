@@ -37,7 +37,7 @@
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Skismøring</span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="index.html">Voks</a>
+          <a class="mdl-navigation__link" href="../index.html">Voks</a>
           <a class="mdl-navigation__link" href="">Klister</a>
           <a class="mdl-navigation__link" href="">Glider</a>
           <a class="mdl-navigation__link" href="">Tilbehør og utstyr</a>
@@ -53,7 +53,7 @@
           // Create connection
           $conn = new mysqli("localhost", $username, $password, "swc_one");
           //Query
-          $sql = "SELECT * FROM `products` WHERE `kategori`=501 ";
+          $sql = "SELECT * FROM `products` WHERE `kategori`=502 ";
           // Check connection
           //test
           if ($conn->connect_error) {
