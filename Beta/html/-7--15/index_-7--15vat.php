@@ -53,7 +53,7 @@
           // Create connection
           $conn = new mysqli("localhost", $username, $password, "swc_one");
           //Query
-          $sql = "SELECT * FROM `products` WHERE `kategori`=502 ";
+          $sql = "SELECT * FROM `products` WHERE `kategori`=501 ";
           // Check connection
           //test
           if ($conn->connect_error) {
