@@ -19,10 +19,5 @@ if ($conn->connect_error) {
 echo "<p>
 ".$row[nr]"
 </p>";
-
-
-
-
     }
-
 ?>

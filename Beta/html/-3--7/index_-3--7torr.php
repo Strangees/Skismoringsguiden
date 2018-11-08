@@ -42,17 +42,46 @@
         </nav>
       </div>
       <main class="mdl-layout__content">
-        <div class="buttons_center">
-          <div class="buttons_center">
-            <p>Følgende voks er til å anbefale</p>
-            <div class="voks">
-            </div>
-            <div class="voks">
-            </div>
-            <div class="voks">
-            </div>
-            <div class="voks">
-            </div>
+        <div class="buttons_center_card">
+            <?php
+            include '../php/conn.php';
+            $username = USERNAME; //defined in conenction.php
+            $password = PASSWORD; //defines in connection.php
+            // Create connection
+            $conn = new mysqli("localhost", $username, $password, "swc_one");
+            //Query
+            $sql = "SELECT * FROM `products` WHERE `kategori`=601 ";
+            // Check connection
+            //test
+            if ($conn->connect_error) {
+               die("Connection failed: " . $conn->connect_error);
+            }
+            //resultsvar
+             $result = $conn->query($sql);
+             if ($result->num_rows > 0) {
+     // output data of each row
+     while($row = $result->fetch_assoc()) {
+       echo "<div class=\"demo-card-square mdl-card mdl-shadow--2dp\">";
+       echo "<div class=\"mdl-card__title mdl-card--expand\"style=\"background: url(";echo "$row[bilde]"; echo ") center no-repeat\">";
+       echo "</div>";
+       echo "<div class=\"mdl-card__actions mdl-card--border headertext\">";
+       echo "$row[navn]";
+       echo "</div>";
+       echo "<div class=\"mdl-card__actions mdl-card--border supportertext\">";
+       echo "$row[beskrivelse]";
+       echo "</div>";
+       echo "<div class=\"mdl-card__actions mdl-card--border webtext\">";
+       echo "<a class=\"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect\">";
+       echo "$row[webside]";
+       echo "</a>";
+       echo "</div> </div>";
+     }
+  }
+  else {
+     echo "Ingen resultater";
+  }
+  $conn->close();
+            ?>
         </div>
       </div>
     </div>

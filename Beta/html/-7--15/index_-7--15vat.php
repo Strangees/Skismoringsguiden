@@ -45,6 +45,7 @@
       </div>
       <main class="mdl-layout__content">
         <div class="buttons_center_card">
+
           <?php
           include '../php/conn.php';
           $username = USERNAME; //defined in conenction.php
@@ -52,7 +53,7 @@
           // Create connection
           $conn = new mysqli("localhost", $username, $password, "swc_one");
           //Query
-          $sql = "SELECT * FROM `products` WHERE `kategori`=602";
+          $sql = "SELECT * FROM `products` WHERE `kategori`=502 ";
           // Check connection
           //test
           if ($conn->connect_error) {

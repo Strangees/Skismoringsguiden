@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <!-- Material Design Lite -->
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -11,7 +10,6 @@
   <link rel="stylesheet" href="../css/nav.css">
   <link rel="stylesheet" href="../css/custom.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 
 <body>
@@ -52,7 +50,7 @@
           // Create connection
           $conn = new mysqli("localhost", $username, $password, "swc_one");
           //Query
-          $sql = "SELECT * FROM `products` WHERE `kategori`=602";
+          $sql = "SELECT * FROM `products` WHERE `kategori`=201 ";
           // Check connection
           //test
           if ($conn->connect_error) {
@@ -84,6 +82,7 @@ else {
 }
 $conn->close();
           ?>
+
           </div>
         </div>
       </main>
