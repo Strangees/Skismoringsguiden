@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,10 +12,12 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
@@ -25,6 +28,7 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 
 import org.w3c.dom.ProcessingInstruction;
 
+import java.io.File;
 import java.security.PrivateKey;
 
 public class WebActivity extends AppCompatActivity {
@@ -51,16 +55,18 @@ public class WebActivity extends AppCompatActivity {
         webView.setWebViewClient(new WebViewClient());
         webView.getSettings().setLoadWithOverviewMode(true);
         webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+
 
         //Webview load url
         webView.loadUrl("http://swc.one/skismoring/index.html");
     }
 
-    public void StartWeb(View view){
+    public void StartWeb(View view) {
         webView.loadUrl("http://swc.one/skismoring/index.html");
     }
 
-    public void ExitAbout(View view){
+    public void ExitAbout(View view) {
         webView.setVisibility(webView.VISIBLE);
         textViewAbout.setVisibility(textViewAbout.INVISIBLE);
         ButtonViewAbout.setVisibility(ButtonViewAbout.INVISIBLE);
@@ -86,7 +92,7 @@ public class WebActivity extends AppCompatActivity {
             return true;
         }
 
-        if (id == R.id.action_web){
+        if (id == R.id.action_web) {
             webView.loadUrl("http://swc.one/skismoring/index.html");
         }
 
@@ -120,5 +126,4 @@ public class WebActivity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
-
 }
