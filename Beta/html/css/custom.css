@@ -57,6 +57,11 @@
   width: 22rem;
   height: 4rem;
   font-size: 1.5rem;
+  background-color: #01579b;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 6px;
+  color: #ffffff;
 
 }
 .material-icons {

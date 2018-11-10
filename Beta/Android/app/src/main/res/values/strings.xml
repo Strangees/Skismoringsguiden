@@ -6,6 +6,7 @@
     <string name="action_about">Om</string>
     <string name="loadingapp">Laster inn..</string>
     <string name="APP_SCHEME">smoringsguiden</string>
+    <string name="MadeOf">SWC</string>
     <string name="about_info">Skismøringsguiden er laget for deg slik at du enkelt kan finne ut av hvilken type smøring du trenger på dine ski. Appen er utviklet av Stian Strange</string>
     <string name="about_info_back">Tilbake</string>
 

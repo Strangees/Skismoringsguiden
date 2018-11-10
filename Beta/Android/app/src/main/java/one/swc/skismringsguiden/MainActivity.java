@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                setProgressValue(progress + 1);
+                setProgressValue(progress + 2);
             }
         });
         thread.start();
