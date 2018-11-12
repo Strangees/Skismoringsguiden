@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
   <!-- Material Design Lite -->
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
@@ -11,9 +10,7 @@
   <link rel="stylesheet" href="../css/nav.css">
   <link rel="stylesheet" href="../css/custom.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-</head>
-
+  </head>
 <body>
   <div class="background_header">
     <!-- Uses a transparent header that draws on top of the layout's background -->
@@ -38,6 +35,10 @@
         <span class="mdl-layout-title">Skismøring</span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="../index.html">Voks</a>
+          <a class="mdl-navigation__link" href="../index_klister.php">Klister</a>
+          <a class="mdl-navigation__link" href="../index_spray.php">Spray</a>
+          <a class="mdl-navigation__link" href="../index_glider_base.php">Glidere og baser</a>
+          <a class="mdl-navigation__link" href="../index_tilbehør.php">Tilbehør</a>
         </nav>
       </div>
       <main class="mdl-layout__content">

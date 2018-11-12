@@ -44,7 +44,7 @@ public class WebActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         setContentView(R.layout.activity_web);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         ButtonViewAbout = (Button) findViewById(R.id.buttonviewabout);
         textViewAbout = (TextView) findViewById(R.id.textviewabout);
         webView = (WebView) findViewById(R.id.WebView1);
@@ -60,6 +60,7 @@ public class WebActivity extends AppCompatActivity {
 
         //Webview load url
         webView.loadUrl("http://swc.one/skismoring/index.html");
+        Toast.makeText(getApplicationContext(), "Velkommen!", Toast.LENGTH_SHORT).show();
     }
 
     public void StartWeb(View view) {
@@ -70,7 +71,7 @@ public class WebActivity extends AppCompatActivity {
         webView.setVisibility(webView.VISIBLE);
         textViewAbout.setVisibility(textViewAbout.INVISIBLE);
         ButtonViewAbout.setVisibility(ButtonViewAbout.INVISIBLE);
-        webView.loadUrl("http://swc.one/skismoring/index.html");
+        //webView.loadUrl("http://swc.one/skismoring/index.html");
     }
 
     @Override
@@ -94,6 +95,7 @@ public class WebActivity extends AppCompatActivity {
 
         if (id == R.id.action_web) {
             webView.loadUrl("http://swc.one/skismoring/index.html");
+            Toast.makeText(getApplicationContext(), "Oppdaterer", Toast.LENGTH_SHORT).show();
         }
 
         if (id == R.id.action_about) {

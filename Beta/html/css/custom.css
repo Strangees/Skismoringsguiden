@@ -7,7 +7,7 @@
 }
 
 .buttons_center{
-  margin-top: 18rem;
+  margin-top: 4rem;
 }
 .buttons_center P{
   font-size: 22px;
@@ -26,6 +26,14 @@
     width: 100%;
     text-align: center;
     background-color: rgba(162, 210, 247, 0.17);
+}
+
+.headerptext{
+  color: rgba(0,0,0,.54);
+  font-size: 2rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(0,0,0,.1);
 }
 .supportertext {
     color: rgba(0,0,0,.54);

@@ -37,6 +37,10 @@
         <span class="mdl-layout-title">Skismøring</span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="../index.html">Voks</a>
+          <a class="mdl-navigation__link" href="../index_klister.php">Klister</a>
+          <a class="mdl-navigation__link" href="../index_spray.php">Spray</a>
+          <a class="mdl-navigation__link" href="../index_glider_base.php">Glidere og baser</a>
+          <a class="mdl-navigation__link" href="../index_tilbehør.php">Tilbehør</a>
         </nav>
       </div>
       <main class="mdl-layout__content">

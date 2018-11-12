@@ -8,8 +8,8 @@
   <!-- Material Design icon font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <!-- custom css-->
-  <link rel="stylesheet" href="../css/nav.css">
-  <link rel="stylesheet" href="../css/custom.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/custom.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
@@ -37,24 +37,24 @@
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Skismøring</span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="../index.html">Voks</a>
-          <a class="mdl-navigation__link" href="../index_klister.php">Klister</a>
-          <a class="mdl-navigation__link" href="../index_spray.php">Spray</a>
-          <a class="mdl-navigation__link" href="../index_glider_base.php">Glidere og baser</a>
-          <a class="mdl-navigation__link" href="../index_tilbehør.php">Tilbehør</a>
+          <a class="mdl-navigation__link" href="index.html">Voks</a>
+          <a class="mdl-navigation__link" href="index_klister.php">Klister</a>
+          <a class="mdl-navigation__link" href="index_spray.php">Spray</a>
+          <a class="mdl-navigation__link" href="index_glider_base.php">Glidere og baser</a>
+          <a class="mdl-navigation__link" href="index_tilbehør.php">Tilbehør</a>
         </nav>
       </div>
       <main class="mdl-layout__content">
         <div class="buttons_center_card">
-
+          <p class="headerptext">Anbefalte klister</p>
           <?php
-          include '../php/conn.php';
+          include 'php/conn.php';
           $username = USERNAME; //defined in conenction.php
           $password = PASSWORD; //defines in connection.php
           // Create connection
           $conn = new mysqli("localhost", $username, $password, "swc_one");
           //Query
-          $sql = "SELECT * FROM `products` WHERE `kategori`=502 ";
+          $sql = "SELECT * FROM `products` WHERE `kategori`=800 ";
           // Check connection
           //test
           if ($conn->connect_error) {
