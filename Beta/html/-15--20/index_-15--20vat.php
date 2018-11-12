@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-49482907-5"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-49482907-5');
+    </script>
   <!-- Material Design Lite -->
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
