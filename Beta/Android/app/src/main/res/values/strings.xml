@@ -9,5 +9,9 @@
     <string name="MadeOf">SWC</string>
     <string name="about_info">Skismøringsguiden er laget for deg slik at du enkelt kan finne ut av hvilken type smøring du trenger på dine ski. Appen er utviklet av Stian Strange</string>
     <string name="about_info_back">Tilbake</string>
-
+    <string name="channel_name">Skismøringsguiden</string>
+    <string name="channel_description">Notifikasjoner for Skismøringsguiden</string>
+   <string name="default_notification_channel_id">channel</string>
+    <string name="fcm_message"></string>
+    <string name="msg_token_fmt">string</string>
 </resources>

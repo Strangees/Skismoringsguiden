@@ -1,48 +1,68 @@
 package one.swc.skismringsguiden;
 
+import android.app.ActivityOptions;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.messaging.FirebaseMessagingService;
+
+import java.io.PushbackInputStream;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "pushmeldingstjenesten";
     private FirebaseAnalytics mFirebaseAnalytics;
     int progress = 0;
     ProgressBar simpleProgressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         setContentView(R.layout.activity_main);
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         simpleProgressBar = (ProgressBar) findViewById(R.id.progressBar);
-        //setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Velkommen", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-
-            }
-        });
         setProgressValue(progress);
-        // ATTENTION: This was auto-generated to handle app links.
-        Intent appLinkIntent = getIntent();
-        String appLinkAction = appLinkIntent.getAction();
-        Uri appLinkData = appLinkIntent.getData();
+        createNotificationChannel();
+        FirebaseMessaging.getInstance().subscribeToTopic("Oppdateringer");
+        FirebaseInstanceId.getInstance().getInstanceId()
+                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w(TAG, "getInstanceId failed", task.getException());
+                            return;
+                        }
+                        // Get new Instance ID token
+                        String token = task.getResult().getToken();
+
+                        // Log and toas
+                        Log.d(TAG, token);
+                    }
+                    });
+        createNotificationChannel();
     }
 
     private void StartWebVeiw() {
@@ -67,18 +87,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         thread.start();
-        if (progress==100) {
+        if (progress == 100) {
             StartWebVeiw();
             finish();
         }
     }
 
 
-    public void StartWeb(View view){
+    public void StartWeb(View view) {
         Intent intent = new Intent(this, WebActivity.class);
         startActivity(intent);
     }
-
 
 
     @Override
@@ -103,5 +122,21 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = getString(R.string.channel_name);
+            String description = getString(R.string.channel_description);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("channel", name, importance);
+            channel.setDescription(description);
+            channel.enableLights(true);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
 
+    }
 }
