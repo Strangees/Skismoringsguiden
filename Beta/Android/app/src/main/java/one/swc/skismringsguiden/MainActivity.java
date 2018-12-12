@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         setProgressValue(progress);
         createNotificationChannel();
         FirebaseMessaging.getInstance().subscribeToTopic("Oppdateringer");
+        FirebaseMessaging.getInstance().subscribeToTopic("test");
         FirebaseInstanceId.getInstance().getInstanceId()
                 .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
                     @Override
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     });
         createNotificationChannel();
+        createNotificationChannel2();
     }
 
     private void StartWebVeiw() {
@@ -138,5 +140,21 @@ public class MainActivity extends AppCompatActivity {
             notificationManager.createNotificationChannel(channel);
         }
 
+    }
+    private void createNotificationChannel2() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = getString(R.string.channel_name2);
+            String description = getString(R.string.channel_description2);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel2 = new NotificationChannel("test", name, importance);
+            channel2.setDescription(description);
+            channel2.enableLights(true);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel2);
+        }
     }
 }

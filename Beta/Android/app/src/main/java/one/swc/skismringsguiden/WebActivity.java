@@ -26,6 +26,9 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
 
@@ -40,6 +43,7 @@ public class WebActivity extends AppCompatActivity {
     private TextView textViewAbout;
     private Button ButtonViewAbout;
     private FirebaseAnalytics mFirebaseAnalytics;
+    private AdView mAdView;
 
 
 
@@ -52,6 +56,12 @@ public class WebActivity extends AppCompatActivity {
         ButtonViewAbout = (Button) findViewById(R.id.buttonviewabout);
         textViewAbout = (TextView) findViewById(R.id.textviewabout);
         webView = (WebView) findViewById(R.id.WebView1);
+
+        //Advview
+        MobileAds.initialize(this, "ca-app-pub-2106018268188752~9296363419");
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice("AD9AF5A795246BB2C7D73DCBB49BBCBC").build();
+        mAdView.loadAd(adRequest);
 
 
         //WebView Settings
